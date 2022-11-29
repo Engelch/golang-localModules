@@ -1,0 +1,9 @@
+I could not get it working without a replace statement. Always got an error message like:
+
+``
+go build
+main.go:5:2: package moduledemoNoReplace/mypackage is not in GOROOT (/opt/homebrew/Cellar/go/1.19.3/libexec/src/moduledemoNoReplace/mypackage)
+``
+
+--u2022-11-29
+

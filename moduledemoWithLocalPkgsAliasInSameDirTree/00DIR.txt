@@ -1,0 +1,36 @@
+---
+header-includes:
+ - \usepackage{fvextra}
+ - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+---
+
+
+Manually added replace line:
+
+```bash
+module moduledemo
+
+go 1.19
+
+replace mypackage => ./mypackage
+```
+
+Commands:
+
+```bash
+$ go build
+main.go:5:2: module mypackage provides package mypackage and is replaced but not required; to add it:
+	go get mypackage
+$ go get mypackage
+go: added mypackage v0.0.0-00010101000000-000000000000
+$ go build
+$ # working
+```
+
+Learnings:
+
+- the current main module does not need to be listed
+- if a vendor directory is specified, the package is actually copied to that. Usually, I delete the copy
+  and replace it by an s-link to the package. So all local pkg updates are immediately visisble. This
+  is the desired behaviour.
+- u2022-11-29
