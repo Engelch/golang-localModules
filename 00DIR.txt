@@ -1,0 +1,6 @@
+Based on doc:
+
+- https://go.dev/blog/using-go-modules
+- https://www.sobyte.net/post/2021-06/how-to-import-local-packages-using-go-module/
+
+   not working as expected, but solution provided.
